@@ -1,5 +1,5 @@
 // TODO: Add real BotAPI-logic currently only returns hardcoded values
-import * as BotAPI from '../../bot.js'
+import * as BotAPI from '../../logic/bot.js'
 
 /* Dispatchable actions */
 export const HUMAN_CHOICE_CHANGED = 'HUMAN_CHOICE_CHANGED'
