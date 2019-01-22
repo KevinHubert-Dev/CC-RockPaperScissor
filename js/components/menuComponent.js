@@ -1,4 +1,5 @@
 import * as redux from '../redux/redux.js'
+import * as ScoreReducer from '../redux/reducer/ScoreReducer.js'
 import * as BotAPI from '../logic/bot.js'
 
 /**
@@ -35,7 +36,7 @@ menuComponent.prototype.init = function () {
   /* Add eventListener to dispatch RESET_SCORE action */
   const resetScoreBtn = this.element.querySelector('#resetScoreBtn')
   resetScoreBtn.addEventListener('click', () => {
-    redux.store.dispatch({ type: redux.RESET_SCORE })
+    redux.store.dispatch({ type: ScoreReducer.RESET_SCORE })
   })
 
   /* Add eventListener - to start a game based on the human-choose (scissor, rock, paper) */
