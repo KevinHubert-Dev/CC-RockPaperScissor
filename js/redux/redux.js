@@ -78,3 +78,41 @@ export const store = createStore(combinedReducer)
 store.dispatch({}) 
 
 
+/**
+ * Dispatches action to play a HumanVsBot rock-paper-scissors match.
+ * Afterwards the win/draw will be added to the score.
+ * @param {int} choice Numeric value 0-2 which indicates the 'rock'-, 'paper'- or 'scissor'-selection of the human-player. Specified in BotAPI.js -> choices 
+ */
+export const HumanVsBotSelectionAction = (choice) => {
+  store.dispatch({
+    type: GameReducer.HUMAN_CHOICE_CHANGED,
+    choice
+  })
+
+  /* Get winner and dispatch action to add win/draw to HumanVsBot-score  */
+  const winnerValue = store.getState().game.lastResult.winner
+  switch (winnerValue) {
+    case 0: store.dispatch({ type: ScoreReducer.INCR_HVB_DRAW }); break;
+    case 1: store.dispatch({ type: ScoreReducer.INCR_HVB_HUMAN_POINT }); break;
+    case 2: store.dispatch({ type: ScoreReducer.INCR_HVB_BOT_POINT }); break;
+    default: throw Error("Unknown winner option. Expected 0-2 instead got", winnerValue)
+  }
+}
+
+/**
+ * Dispatches actions to play a BotVsBot rock-paper-scissors match (randomly).
+ * Afterwards the win/draw will be added to the score.
+ * @param {int} choice Numeric value 0-2 which indicates the 'rock'-, 'paper'- or 'scissor'-selection. Specified in BotAPI.js -> choices 
+ */
+export const BotVsBotSelectionAction = () => {
+  store.dispatch({ type: GameReducer.BVB_RANDOM_CHOICES })
+
+  /* Get winner and dispatch action to add win/draw to BotVSBot-score  */
+  const winnerValue = store.getState().game.lastResult.winner
+  switch (winnerValue) {
+    case 0: store.dispatch({ type: ScoreReducer.INCR_BVB_DRAW }); break;
+    case 1: store.dispatch({ type: ScoreReducer.INCR_BVB_BOT1_POINT }); break;
+    case 2: store.dispatch({ type: ScoreReducer.INCR_BVB_BOT2_POINT }); break;
+    default: throw Error("Unknown winner option. Expected 0-2 instead got", winnerValue)
+  }
+}
