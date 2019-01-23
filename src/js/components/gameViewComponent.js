@@ -19,7 +19,7 @@ let gameViewComponent = function gameViewComponent(DOMElement) {
  */
 gameViewComponent.prototype.renderChoice = function (choice1, choice2) {
   return `<div class="choicebox horizontal-mirrored">
-                <i class="${h1.getChoiceIcon(choice1)}"></i>
+                <i class="${BotAPI.getChoiceIcon(choice1)}"></i>
             </div>
             <div class="choicebox">
                 <i class="${BotAPI.getChoiceIcon(choice2)}"></i>

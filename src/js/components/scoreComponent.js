@@ -18,7 +18,7 @@ let scoreComponent = function scoreComponent(DOMElement) {
  */
 scoreComponent.prototype.render = function ({ score }) {
   const { humanVsBot, botVsBot } = score;
-
+    console.log("scoreComponentRender called")
   this.element.innerHTML = `
     <h2 class='textCenter'>Score</h2>
     <div>
