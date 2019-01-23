@@ -1,0 +1,195 @@
+/* Support different screen-sizes */
+html {
+    font-size: 100%;
+  
+    @media (min-width: 0em) {
+      font-size: 70%;
+    }
+    @media (min-width: 28em) {
+      font-size: 80%;
+    }
+    @media (min-width: 36em) {
+      font-size: 90%;
+    }
+    @media (min-width: 100em) {
+      font-size: 95%;
+    }
+    @media (min-width: 120em) {
+      font-size: 100%;
+    }
+    @media (min-width: 160em) {
+      font-size: 150%;
+    }
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 48rem;
+    margin: auto;
+    background-color: #dae0e6
+  }
+  
+  .pagecontent {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      flex: 1;
+      width: 100%;
+    }
+
+    #game {
+      flex: 2;
+    }
+  }
+  
+  #menu {
+    display: flex;
+    
+    .flexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      align-self: flex-end;
+      width: 100%;
+    }
+    
+    button {
+      height: 100%;
+      color: #fff;
+      background: #426FC5;
+      box-shadow: none;
+      border-radius: 0px;
+      height: auto;
+      padding: .75rem;
+      i {
+        font-size: 2.75rem;
+      }
+      p {
+        margin:.25rem;
+        font-size: 1rem;
+      }
+    }    
+  }
+  
+  #score {
+    margin-top: 2rem;
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;        
+      h4 {
+        margin: .20rem;
+        font-size:1.6rem;
+        
+        .game-scoring {
+          padding: 0rem .5rem 0rem .5rem
+        }
+      }
+      h5 {
+        margin:.25rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  .textCenter {
+    text-align: center;
+  }
+  
+  .horizontal-mirrored {
+    transform: scaleX(-1)
+  }
+  
+  .title {
+    font-size: 2rem;
+    text-align: center;
+    h1 {
+      font-size: 3.2rem;
+      margin: .32rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin: .8rem;
+    }
+  }
+  
+  
+#game {
+    h2 {
+      margin-bottom:.25rem;
+    }
+  
+    h3 {
+      margin: .25rem;
+    }
+
+    & > .gameArea {
+    padding: 1rem;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+  
+    .choicebox {
+      display:inline-block;
+      font-size: 8rem;
+      color: #426FC5;
+    }
+      
+    .resultExplaination {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+}
+  
+  .flex-1 {
+    flex: 1 1 auto;
+  }
+
+  .noGamePlayerYet {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+    
+  h2 {
+    margin-bottom:.25rem;
+  }
+  
+  .no-script {
+    width: 100%;
+    height: 100%;
+    background: #00000055;
+    h1 {
+      font-size: 2.5rem;
+      color: #dd5555;
+    }
+  }
+
+// Edge does not support "justify-content: space-evenly;".
+// Use this workaround instead
+@supports (-ms-ime-align:auto) {
+  #score {
+    & > div {
+      justify-content: center !important;
+      & > div {
+        margin: 0rem 2rem 0rem 2rem !important;
+      }
+    }
+  }
+
+  .gameArea {
+    justify-content: center !important;
+    .choicebox {
+      margin: 0rem 3rem 0rem 3rem !important;
+    }
+  }
+}
