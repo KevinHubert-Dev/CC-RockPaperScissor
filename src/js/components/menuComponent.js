@@ -8,7 +8,7 @@ import * as BotAPI from '../logic/bot.js'
  * and a button to reset the score 
  * @param {object} DOMElement DOMElement to render buttons in. (e.g.: document.getElementById('...'))
  */
-let menuComponent = function menuComponent(DOMElement) {
+export const menuComponent = function menuComponent(DOMElement) {
   this.element = DOMElement;
 }
 

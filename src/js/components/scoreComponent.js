@@ -5,7 +5,7 @@ import * as redux from '../redux/redux.js'
  * BotVsBot rock-paper-scissor-matches
  * @param {object} DOMElement DOMElement to render buttons in. (eg: document.getElementById())
  */
-let scoreComponent = function scoreComponent(DOMElement) {
+export const scoreComponent = function scoreComponent(DOMElement) {
   this.element = DOMElement;
 
   /* Rerender with each Redux-state-change */
@@ -47,7 +47,3 @@ scoreComponent.prototype.render = function ({ score }) {
 scoreComponent.prototype.init = function () {
   this.render(redux.store.getState());
 }
-
-/* Create new scoreComponent instance and initialize it */
-const mainScore = new scoreComponent(document.getElementById("score"))
-mainScore.init()

@@ -5,7 +5,7 @@ import * as BotAPI from '../logic/bot.js'
  * gameViewComponent renders the current rock-paper-scissor-game and information about the last winner. 
  * @param {object} DOMElement DOMElement to render in. (e.g.: document.getElementById('...'))
  */
-let gameViewComponent = function gameViewComponent(DOMElement) {
+export const gameViewComponent = function gameViewComponent(DOMElement) {
   this.element = DOMElement;
 
   /* subscribes to the redux.store to automatically rerender on changes */
@@ -64,7 +64,7 @@ gameViewComponent.prototype.renderResultExplaination = function (lastResult) {
   }
 
   return `
-    <h1 class='textCenter'>${winnerText}</h1>
+    <h2 class='textCenter'>${winnerText}</h2>
     <h3 class='textCenter'>${lastResult.explaination}</h3>
   `
 }
@@ -97,7 +97,3 @@ gameViewComponent.prototype.render = function ({ game }) {
 gameViewComponent.prototype.init = function () {
   this.render(redux.store.getState());
 }
-
-/* Create new gameViewComponent instance and initialize it */
-const game = new gameViewComponent(document.getElementById("game"))
-game.init()
