@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "node ./webserver.js",
     "build": "babel src/js/ -d build --plugins @babel/plugin-proposal-object-rest-spread",
     "pack": "webpack"
   },
