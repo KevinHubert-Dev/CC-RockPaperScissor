@@ -1,0 +1,181 @@
+/* Support different screen-sizes */
+html {
+  font-size: 100%;
+}
+@media (min-width: 0em) {
+  html {
+    font-size: 70%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 28em) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (min-width: 36em) {
+  html {
+    font-size: 90%;
+    max-width: 48rem;
+    margin: auto;
+  }
+}
+@media (min-width: 100em) {
+  html {
+    font-size: 95%;
+  }
+}
+@media (min-width: 120em) {
+  html {
+    font-size: 100%;
+  }
+}
+@media (min-width: 160em) {
+  html {
+    font-size: 150%;
+  }
+}
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #dae0e6;
+}
+.pagecontent {
+  margin: auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pagecontent > div {
+  flex: 1;
+  width: 100%;
+}
+.pagecontent #game {
+  flex: 2;
+}
+#menu {
+  display: flex;
+}
+#menu .flexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: flex-end;
+  width: 100%;
+}
+#menu button {
+  margin: 0px 1px 0px 1px;
+  height: 100%;
+  color: #fff;
+  background: #426FC5;
+  box-shadow: none;
+  border-radius: 0px;
+  border: 0px;
+  height: auto;
+  padding: .75rem;
+}
+#menu button i {
+  font-size: 2.75rem;
+}
+#menu button p {
+  margin: .25rem;
+  font-size: 1rem;
+}
+#score {
+  margin-top: 2rem;
+}
+#score > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#score > div h4 {
+  margin: .20rem;
+  font-size: 1.6rem;
+}
+#score > div h4 .game-scoring {
+  padding: 0rem 0.5rem 0rem 0.5rem;
+}
+#score > div h5 {
+  margin: .25rem;
+  font-size: 1.2rem;
+}
+.textCenter {
+  text-align: center;
+}
+.horizontal-mirrored {
+  transform: scaleX(-1);
+}
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+.title h1 {
+  font-size: 3.2rem;
+  margin: .32rem;
+}
+.title p {
+  font-size: 1.6rem;
+  margin: .8rem;
+}
+#game h2 {
+  margin-bottom: .25rem;
+}
+#game h3 {
+  margin: .25rem;
+}
+#game > .gameArea {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#game > .gameArea .choicebox {
+  display: inline-block;
+  font-size: 8rem;
+  color: #426FC5;
+}
+#game > .gameArea .resultExplaination {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.flex-1 {
+  flex: 1 1 auto;
+}
+.noGamePlayerYet {
+  font-size: 1.6rem;
+  text-align: center;
+}
+h2 {
+  margin-bottom: .25rem;
+}
+.no-script {
+  width: 100%;
+  height: 100%;
+  background: #00000055;
+}
+.no-script h1 {
+  font-size: 2.5rem;
+  color: #dd5555;
+}
+@supports (-ms-ime-align:auto) {
+  #score > div {
+    justify-content: center !important;
+  }
+  #score > div > div {
+    margin: 0rem 2rem 0rem 2rem !important;
+  }
+  .gameArea {
+    justify-content: center !important;
+  }
+  .gameArea .choicebox {
+    margin: 0rem 3rem 0rem 3rem !important;
+  }
+}
