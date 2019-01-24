@@ -44,37 +44,47 @@ For mobile devices only portait-view is offical supported
 - Opera Mini 38+
 - Edge 42+
 
+
+
+## Prerequisites
+The following version where used for development. Lower version may work too.
+- NPM v6.1.0+
+- Node v6.11.0+
+
 ## Installation
 
 ### Clone & Install
- bash
+``` bash
 git clone https://github.com/4scotty/coding_challenge_kevin.git
 cd coding_challenge_kevin
 npm install
+```
 
 This can take a while ... ☕
 
 I've commited the whole 'dist'-folder so you don't have to execute the following steps to try the app but feel free to do it anyway.
 ### Transpile ES6 to ES5 (using Babel)
 
+```
 npm run build
-
+```
 
 ### Pack transpiled code
 
+```
 npm run pack
+```
 
-
-### Run local
+## Run local
 Open "dist/index.html" to run directly in your browser.
 
 OR
 
 Use webserver to serve files inside the "dist"-directory. 
 Default port 8080, set "ROCK_PAPER_SCISSOR_PORT"-enviroment-variable to change port.
-
+```
 npm start
-
+```
 Open browser and navigate to http://localhost:8080
 
 ## Screenshots
@@ -109,8 +119,8 @@ Game screen
 
 
 # Known Bugs
-- Landscape orientation is not working on mobile-devices
-- The app may look slighly different in IE & Edge  because they don't support "justify-content: space-evenly" (CSS) and got a fallback instead.
+- Landscape orientation is not working on mobile-devices (not responsive)
+- The app may look slighly different in IE & Edge because they don't support "justify-content: space-evenly" (CSS) and got a fallback instead.
 - Internet Explorer is not supported yet. Should be fixed by adding additional plugins for babel
 
 # ToDo
