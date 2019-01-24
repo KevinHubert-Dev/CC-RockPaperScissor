@@ -93,7 +93,7 @@ Default port 8080, set "ROCK_PAPER_SCISSOR_PORT"-enviroment-variable to change p
 ```
 npm start
 ```
-Open browser and navigate to http://localhost:<port>
+Open browser and navigate to http://localhost:*port*
 
 
 ## UI
