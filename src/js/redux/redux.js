@@ -41,7 +41,6 @@ function createStore(reducer) {
    * @param {function} listenerToAdd Function to call. 
    */
   const subscribe = (listenerToAdd) => {
-    console.log("Subscriber added", listenerToAdd)
     listeners.push(listenerToAdd)
   }
 
@@ -59,9 +58,7 @@ function createStore(reducer) {
    * e.g. { type: <ACTION>, ...param } 
    */
   const dispatch = (action) => {
-    console.log("Redux-state", state)
     state = reducer(state, action)
-    console.log("Following listeners will be called", listeners)
     listeners.forEach(listener => listener())
   }
 

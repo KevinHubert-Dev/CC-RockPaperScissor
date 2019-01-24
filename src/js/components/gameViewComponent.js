@@ -18,12 +18,14 @@ export const gameViewComponent = function gameViewComponent(DOMElement) {
  * @param {int} choice2 Same as choice1 but rendered on the right-side. 
  */
 gameViewComponent.prototype.renderChoice = function (choice1, choice2) {
-  return `<div class="choicebox horizontal-mirrored">
-                <i class="${BotAPI.getChoiceIcon(choice1)}"></i>
-            </div>
-            <div class="choicebox">
-                <i class="${BotAPI.getChoiceIcon(choice2)}"></i>
-            </div>`
+  return `
+    <div class="choicebox horizontal-mirrored">
+      <i class="${BotAPI.getChoiceIcon(choice1)}"></i>
+    </div>
+    <div class="choicebox">
+      <i class="${BotAPI.getChoiceIcon(choice2)}"></i>
+    </div>
+  `
 }
 
 /**
@@ -33,8 +35,8 @@ gameViewComponent.prototype.renderChoice = function (choice1, choice2) {
 gameViewComponent.prototype.renderResultExplainationAlternative = function (lastResult) {
   return `
       <h2 class='textCenter'>${lastResult.type === BotAPI.gameModus.HUMAN_VS_BOT
-    ? lastResult.winner === 0 ? 'Draw' : lastResult.winner === 1 ? 'You won' : 'You lost'
-    : lastResult.winner === 0 ? 'Draw' : lastResult.winner === 1 ? 'Bot 1 won' : 'Bot 2 won'}
+        ? lastResult.winner === 0 ? 'Draw' : lastResult.winner === 1 ? 'You won' : 'You lost'
+        : lastResult.winner === 0 ? 'Draw' : lastResult.winner === 1 ? 'Bot 1 won' : 'Bot 2 won'}
       </h2>
     <h3 class='textCenter'>${lastResult.explaination}</h3>
   `
@@ -77,15 +79,15 @@ gameViewComponent.prototype.render = function ({ game }) {
   if (game.lastResult) {
     /* Only render when a game has been played */
     this.element.innerHTML = `
-            <div class='gameArea'>
-            ${
+      <div class='gameArea'>
+      ${
       game.lastResult.type === BotAPI.gameModus.HUMAN_VS_BOT
         ? this.renderChoice(game.humanVsBot.humanChoice, game.humanVsBot.botChoice) /* Last game vs HumanVsBot */
         : this.renderChoice(game.botVsBot.bot1Choice, game.botVsBot.bot2Choice) /* Last game vs BotVsBot */
       }
-            </div>
-            ${this.renderResultExplaination(game.lastResult)}
-        `
+      </div>
+      ${this.renderResultExplaination(game.lastResult)}
+    `
   } else {
     this.element.innerHTML = '<p class="noGamePlayerYet">No game played yet</p>'
   }

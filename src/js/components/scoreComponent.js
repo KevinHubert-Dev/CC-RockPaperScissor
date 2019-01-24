@@ -18,25 +18,24 @@ export const scoreComponent = function scoreComponent(DOMElement) {
  */
 scoreComponent.prototype.render = function ({ score }) {
   const { humanVsBot, botVsBot } = score;
-    console.log("scoreComponentRender called")
   this.element.innerHTML = `
     <h2 class='textCenter'>Score</h2>
     <div>
-        <div>
-            <h4>You
-                <span class='game-scoring'> ${humanVsBot.human} : ${humanVsBot.bot} </span>
-                <i class="fas fa-robot" style='color: #00897B'></i>
-            </h4>
-            <h5 class='textCenter'>(Draws ${humanVsBot.draw})</h5>
-        </div>
-        <div>
-            <h4>
-                <i class="fas fa-robot" style='color: #426FC5'></i>
-                <span class='game-scoring'> ${botVsBot.bot1} : ${botVsBot.bot2} </span>
-                <i class="fas fa-robot" style='color: #00897B'></i>
-            </h4>
-            <h5 class='textCenter'>(Draws ${botVsBot.draw})</h5>
-        </div>
+      <div>
+        <h4>You
+          <span class='game-scoring'> ${humanVsBot.human} : ${humanVsBot.bot} </span>
+          <i class="fas fa-robot" style='color: #00897B'></i>
+        </h4>
+        <h5 class='textCenter'>(Draws ${humanVsBot.draw})</h5>
+      </div>
+      <div>
+        <h4>
+          <i class="fas fa-robot" style='color: #426FC5'></i>
+          <span class='game-scoring'> ${botVsBot.bot1} : ${botVsBot.bot2} </span>
+          <i class="fas fa-robot" style='color: #00897B'></i>
+        </h4>
+        <h5 class='textCenter'>(Draws ${botVsBot.draw})</h5>
+      </div>
     </div>
   `
 }

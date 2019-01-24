@@ -24,7 +24,7 @@ menuComponent.prototype.render = function () {
       <button class='flex-1' id='randomBtn' type='button'><i class="fas fa-robot"></i><p>PC vs. PC</p></button>
       <button class='flex-1' id='resetScoreBtn' type='button'><i class="fas fa-undo"></i><p>Reset Score</p></button>
     </div>
-    `
+  `
 }
 
 /** 
@@ -36,33 +36,28 @@ menuComponent.prototype.init = function () {
   /* Add eventListener to dispatch RESET_SCORE action */
   const resetScoreBtn = this.element.querySelector('#resetScoreBtn')
   resetScoreBtn.addEventListener('click', () => {
-    console.log("resetScoreBtn clicked")
     redux.store.dispatch({ type: ScoreReducer.RESET_SCORE })
   })
 
   /* Add eventListener - to start a game based on the human-choose (scissor, rock, paper) */
   const scissorBtn = this.element.querySelector('#scissorBtn')
   scissorBtn.addEventListener('click', () => {
-    console.log("scissorBtn clicked")
     redux.HumanVsBotSelectionAction(BotAPI.choices.SCISSOR)
   })
 
   const rockBtn = this.element.querySelector('#rockBtn')
   rockBtn.addEventListener('click', () => {
-    console.log("rockBtn clicked")
     redux.HumanVsBotSelectionAction(BotAPI.choices.ROCK)
   })
 
   const paperBtn = this.element.querySelector('#paperBtn')
   paperBtn.addEventListener('click', () => {
-    console.log("paperBtn clicked")
     redux.HumanVsBotSelectionAction(BotAPI.choices.PAPER)
   })
 
   /* Add eventLister - to start BotVsBot game */
   const randomBtn = this.element.querySelector('#randomBtn')
   randomBtn.addEventListener('click', () => {
-    console.log("randomBtn clicked")
     redux.BotVsBotSelectionAction()
   })
 
