@@ -51,7 +51,7 @@ The following version where used for development. Lower version may work too.
 - NPM v6.1.0+
 - Node v6.11.0+
 
-## Installation
+## Install & Run
 
 ### Clone & Install
 ``` bash
@@ -63,6 +63,14 @@ npm install
 This can take a while ... ☕
 
 I've commited the whole 'dist'-folder so you don't have to execute the following steps to try the app but feel free to do it anyway.
+
+
+### Run Tests
+The project-test-suite currently only contain unit-tests for bot.js. The tests can be started within the following command. Automatic test uses Mocha + Chai.
+```
+npm test
+```
+
 ### Transpile ES6 to ES5 (using Babel)
 
 ```
@@ -75,7 +83,7 @@ npm run build
 npm run pack
 ```
 
-## Run local
+### Run local
 Open "dist/index.html" to run directly in your browser.
 
 OR
@@ -85,48 +93,49 @@ Default port 8080, set "ROCK_PAPER_SCISSOR_PORT"-enviroment-variable to change p
 ```
 npm start
 ```
-Open browser and navigate to http://localhost:8080
+Open browser and navigate to http://localhost:<port>
 
-## Screenshots
+
+## UI
 
 ### Mockup
 
-Planned UI
+Planned UI. Photo of my whiteboard.  
 ![Wireframe](/screenshots/wireframe.jpg?raw=true)
 
-### Desktop
+### Desktop - Screenshot
 
 ---
 
-Default screen
+Default screen  
 ![Starting_screen](/screenshots/defaultScreen.jpg?raw=true)
 
 ---
 
-Game screen
+Game screen  
 ![Game_Screen](/screenshots/game.jpg?raw=true)
 
 
-### Mobile 
+### Mobile - Screenshot
 
-Default screen
+Default screen  
 ![Starting_screen](/screenshots/defaultScreen_mobile.jpg?raw=true)
 
 ---
 
-Game screen
+Game screen  
 ![Game_Screen](/screenshots/game_mobile.jpg?raw=true)
 
 
 # Known Bugs
-- Landscape orientation is not working on mobile-devices (not responsive)
+- Landscape-orientation is not working on mobile-devices
 - The app may look slighly different in IE & Edge because they don't support "justify-content: space-evenly" (CSS) and got a fallback instead.
 - Internet Explorer is not supported yet. Should be fixed by adding additional plugins for babel
 
 # ToDo
-- Add Internet Explorer support
-- Change css/less to support landscape-orientation on mobile-devices
-- Add tests
+- [x] Add tests
+- [ ] Add Internet Explorer support
+- [ ] Change css/less to support landscape-orientation on mobile-devices
 
 # About
 
