@@ -55,7 +55,7 @@ The following version where used for development. Lower version may work too.
 
 ### Clone & Install
 ``` bash
-git clone https://github.com/4scotty/coding_challenge_kevin.git
+git clone https://github.com/KevinHubert-Dev/CC-RockPaperScissor.git
 cd coding_challenge_kevin
 npm install
 ```
